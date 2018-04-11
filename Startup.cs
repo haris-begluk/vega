@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Vega.Persistence;
-
+using AutoMapper;
 namespace Vega
 {
     public class Startup
@@ -23,7 +23,9 @@ namespace Vega
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        { 
+        {  
+            //Service za AutoMapper 
+            services.AddAutoMapper();
             //Ovdje registrujemo service u ovom slucaju za Dependency-Injection  
             //Metodi UseSqlServer() proslijedjujemo connString 
             services.AddDbContext<VegaDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
