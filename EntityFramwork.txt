@@ -4,4 +4,10 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
       <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
 </ItemGroup> 
 
-dotnet ef migrations add InitialModel
+dotnet ef migrations add InitialModel 
+
+//Na ovaj nacin radimo downgrade na inicijalnu migraciju  
+ dotnet ef database update 0 
+//Nakon toga izbrisemo zeljenu migraciju i kreiramo novu 
+ dotnet ef migrations remove InitialModel 
+//Ovaj pristup nije preporucljiv iz razloga sto mozemo dobiti razne greske 
