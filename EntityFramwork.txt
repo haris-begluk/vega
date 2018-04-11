@@ -10,4 +10,17 @@ dotnet ef migrations add InitialModel
  dotnet ef database update 0 
 //Nakon toga izbrisemo zeljenu migraciju i kreiramo novu 
  dotnet ef migrations remove InitialModel 
-//Ovaj pristup nije preporucljiv iz razloga sto mozemo dobiti razne greske 
+//Ovaj pristup nije preporucljiv iz razloga sto mozemo dobiti razne greske  
+
+
+                migrationBuilder.Sql("INSERT INTO Makes (Name) VALUES ('AnonymousName463')"); 
+                migrationBuilder.Sql("INSERT INTO Makes (Name) VALUES ('AnonymousName747')");
+                migrationBuilder.Sql("INSERT INTO Makes (Name) VALUES ('AnonymousName436')");
+                migrationBuilder.Sql("INSERT INTO Makes (Name) VALUES ('AnonymousName6347')");
+                migrationBuilder.Sql("INSERT INTO Makes (Name) VALUES ('AnonymousName845')"); 
+                migrationBuilder.Sql("INSERT INTO Models(Name, MakeId) VALUES ('AnonymousName463-Model1', 1)");
+                migrationBuilder.Sql("INSERT INTO Models(Name, MakeId) VALUES ('AnonymousName747-Model1', 2)");
+                migrationBuilder.Sql("INSERT INTO Models(Name, MakeId) VALUES ('AnonymousName845-Model1', 5)"); 
+
+
+             migrationBuilder.Sql("DELETE FROM Makes WHERE Name IN ('Name1', 'Name2', 'Name3')");
